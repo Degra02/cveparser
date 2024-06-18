@@ -1,5 +1,3 @@
-use serde::{Deserialize, Serialize};
-
 pub mod cve_data;
 pub mod configurations;
 pub mod impact;
