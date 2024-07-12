@@ -6,6 +6,8 @@ use super::utils::CvssV3Severity;
 pub struct Impact {
     #[serde(rename = "baseMetricV3", skip_serializing_if = "Option::is_none")]
     base_metric_v3: Option<BaseMetricV3>,
+
+    #[serde(rename = "baseMetricV2", skip_serializing_if = "Option::is_none")]
     base_metric_v2: Option<BaseMetricV2>,
 
     #[serde(rename = "impactScore", skip_serializing_if = "Option::is_none")]
