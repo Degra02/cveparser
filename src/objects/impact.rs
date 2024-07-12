@@ -9,7 +9,10 @@ pub struct Impact {
 
     #[serde(rename = "baseMetricV2", skip_serializing_if = "Option::is_none")]
     base_metric_v2: Option<BaseMetricV2>,
+}
 
+#[derive(Serialize, Deserialize, Debug)]
+pub struct AdditionalData {
     #[serde(rename = "impactScore", skip_serializing_if = "Option::is_none")]
     impact_score: Option<f32>,
 
@@ -35,10 +38,14 @@ pub struct Impact {
     ac_insuf_info: Option<bool>,
 }
 
+
 #[derive(Serialize, Deserialize, Debug)]
 pub struct BaseMetricV3 {
     #[serde(rename = "cvssV3")]
     cvss_v3: CvssV3,
+
+    #[serde(flatten)]
+    additional_data: AdditionalData,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -83,6 +90,9 @@ pub struct CvssV3 {
 pub struct BaseMetricV2 {
     #[serde(rename = "cvssV2")]
     cvss_v2: CvssV2,
+
+    #[serde(flatten)]
+    additional_data: AdditionalData,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
