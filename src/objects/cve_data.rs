@@ -6,11 +6,11 @@ use super::utils::{Data, Description, Meta, ProblemType, Reference};
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct CveData {
     #[serde(flatten)]
-    data: Data,
+    pub data: Data,
     #[serde(rename = "CVE_data_meta")]
-    cve_data_meta: Meta,
-    problemtype: ProblemType,
-    references: Reference,
-    description: Description,
+    pub cve_data_meta: Meta,
+    pub problemtype: ProblemType,
+    pub references: Reference,
+    pub description: Description,
 }
 

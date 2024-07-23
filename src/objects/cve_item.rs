@@ -3,14 +3,14 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct CveItem {
-    cve: CveData,
-    configurations: Configurations,
+    pub cve: CveData,
+    pub configurations: Configurations,
 
-    impact: Impact,
+    pub impact: Impact,
 
     #[serde(rename = "publishedDate")]
-    published_date: String,
+    pub published_date: String,
 
     #[serde(rename = "lastModifiedDate")]
-    last_modified_date: String,
+    pub last_modified_date: String,
 }
