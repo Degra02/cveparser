@@ -1,7 +1,7 @@
 use super::{configurations::Configurations, cve_data::CveData, impact::Impact};
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct CveItem {
     cve: CveData,
     configurations: Configurations,

@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use super::utils::CvssV3Severity;
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct Impact {
     #[serde(rename = "baseMetricV3", skip_serializing_if = "Option::is_none")]
     base_metric_v3: Option<BaseMetricV3>,
@@ -11,7 +11,7 @@ pub struct Impact {
     base_metric_v2: Option<BaseMetricV2>,
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct AdditionalData {
     #[serde(rename = "impactScore", skip_serializing_if = "Option::is_none")]
     impact_score: Option<f32>,
@@ -39,7 +39,7 @@ pub struct AdditionalData {
 }
 
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct BaseMetricV3 {
     #[serde(rename = "cvssV3")]
     cvss_v3: CvssV3,
@@ -48,7 +48,7 @@ pub struct BaseMetricV3 {
     additional_data: AdditionalData,
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct CvssV3 {
     version: String,
 
@@ -86,7 +86,7 @@ pub struct CvssV3 {
     base_severity: CvssV3Severity,
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct BaseMetricV2 {
     #[serde(rename = "cvssV2")]
     cvss_v2: CvssV2,
@@ -95,7 +95,7 @@ pub struct BaseMetricV2 {
     additional_data: AdditionalData,
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct CvssV2 {
     version: String,
 

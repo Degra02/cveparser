@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use super::cve_item::CveItem;
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct Nvd {
     #[serde(rename = "CVE_data_type")]
     pub cve_data_type: String,

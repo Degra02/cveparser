@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 use super::utils::{Data, Description, Meta, ProblemType, Reference};
 
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct CveData {
     #[serde(flatten)]
     data: Data,
